@@ -6,6 +6,7 @@ RUN apt update && apt install -y wget unzip && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade accelerate
 
 RUN pip install gdown && \
     gdown --id 1m1iu-6EpCPPejP3uzDK6udZ69mYZNugH -O model.zip && \
